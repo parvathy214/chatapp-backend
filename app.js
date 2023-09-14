@@ -93,7 +93,7 @@ io.on('connection', (socket) => {
     // Join the room
     socket.join(room.room);
     console.log("room from old msg ",room);
-    console.log("re sending msg ", data.messages);
+    // console.log("re sending msg ", data.messages);
     await io.to(room.room).emit('old_message',data.messages)            // send the old chats to fronend
   }); 
 socket.on('send_message',async (msg) => {                               // receiving the messages that coming from frontend
