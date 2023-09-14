@@ -12,9 +12,7 @@ app.use(express.urlencoded({extended:true}))
 
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer, {
-  cors: {
-    origins: ["http://192.168.0.17:4200"],
-}
+  cors: {origin : '*'}
 });
 
 const mongoose = require('./db')
@@ -127,10 +125,10 @@ app.use('/',invite);
 const path = require('path');
 app.use(express.static('./dist/frontend/'))
 app.get('/*', function(req, res) { res.sendFile(path.join(__dirname + '/dist/frontend/index.html')); });
-// app.listen(3000,()=>{
-//     console.log("server running at 3000")
-// })
-httpServer.listen(3000, () => console.log(`listening on port 3000`));
+app.listen(3000,()=>{
+    console.log("server running at 3000")
+})
+httpServer.listen(3001, () => console.log(`listening on port 3001`));
 
 
 
