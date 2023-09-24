@@ -127,10 +127,10 @@ const path = require('path');
 app.use(express.static('./dist/frontend/'))
 app.get('/*', function(req, res) { res.sendFile(path.join(__dirname + '/dist/frontend/index.html')); });
 
-httpServer.listen(3001, () => console.log(`listening on port 3001`));
-app.listen(3000,()=>{
-    console.log("server running at 3000")
-})
+httpServer.listen(3000, () => console.log(`listening on port 3000`));
+// app.listen(3000,()=>{
+//     console.log("server running at 3000")
+// })
 
 
 
