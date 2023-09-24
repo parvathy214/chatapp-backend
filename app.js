@@ -12,7 +12,8 @@ app.use(express.urlencoded({extended:true}))
 
 const httpServer = require('http').createServer(app);
 const io = require('socket.io')(httpServer, {
-  cors: {origin : '*'}
+  cors: {origin : ['216.24.57.253']
+  }
 });
 
 const mongoose = require('./db')
